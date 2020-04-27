@@ -1,10 +1,9 @@
-const fibbonacciCropped = (n) {
-  let sum = 0;
-  for (i = 0; i <= n; i++) {
-    if (i % 5 !== 0 && i % 7 !== 0) {
-      sum += i;
-    }
-  }
-  
-  return sum;
-}
+const fibonnaciCropped = n => {
+  const numbers = Array.from(Array(n).keys());
+  const filteredNumbers = numbers.filter(
+    number => !(number % 5 === 0 || number % 7 === 0)
+  );
+  return filteredNumbers.reduce((a, b) => a + b);
+};
+
+module.exports = fibonnaciCropped;
