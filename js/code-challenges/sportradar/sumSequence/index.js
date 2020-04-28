@@ -1,5 +1,4 @@
-const maxSequence = (numbers) => {
-  const allPositives = () => numbers.every(n => n > 0);
+const maxSequence = numbers => {
   const allNegatives = () => numbers.every(n => n < 0);
 
   if (numbers.length === 0 || allNegatives(numbers)) return 0;
@@ -23,7 +22,7 @@ const maxSequence = (numbers) => {
         start: temp.start,
         end: i,
         sum: temp.sum
-      }
+      };
     }
 
     if (temp.sum < 0) {
@@ -33,10 +32,12 @@ const maxSequence = (numbers) => {
   }
 
   return result.sum;
-}
+};
 
-const calculateMaxSequence = (stringNumbers) => {
-  const arrayNumbers = stringNumbers.split(',')
-  const numbers = arrayNumbers.map((number) => +number)
-  return maxSequence(numbers)
-}
+const calculateMaxSequence = stringNumbers => {
+  const arrayNumbers = stringNumbers.split(",");
+  const numbers = arrayNumbers.map(number => +number);
+  return maxSequence(numbers);
+};
+
+module.exports = calculateMaxSequence;
