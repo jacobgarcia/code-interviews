@@ -1,3 +1,4 @@
+import functools
 flatten_list = []
 
 
@@ -22,4 +23,4 @@ def parse_list(lst):
 
 
 def list_sum(list):
-    return parse_list(flat_list(list))
+    return functools.reduce(lambda a, b: a + b, parse_list(flat_list(list)))

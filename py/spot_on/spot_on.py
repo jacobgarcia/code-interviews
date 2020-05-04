@@ -1,4 +1,4 @@
-def vowel_count(str):
+def vowel_count(str) -> int:
     vowels = 'aeiou'
     count = 0
     for char in str.lower():
