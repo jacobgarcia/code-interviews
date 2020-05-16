@@ -107,9 +107,7 @@ process.stdin.on("end", () => {
 });
 
 main = text => {
-  text.map(word => {
-    decrypt(word);
-  });
+  text.map(word => decrypt(word));
 
   const vocabulary = [...new Set(text)];
   const nonDuplicated = [...new Set(numbers)];

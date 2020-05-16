@@ -25,9 +25,7 @@ const isPretty = number => {
 
 const decryptNumber = number => {
   return Array.from(number)
-    .map((char, index) => {
-      return Math.pow(20, index) * char;
-    })
+    .map((char, index) => Math.pow(20, index) * char)
     .reduce((a, b) => a + b);
 };
 
